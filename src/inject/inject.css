@@ -1,0 +1,26 @@
+/* plus-action for albums */
+.thumbnail span.plus {
+	position: absolute;
+	top: 55px;
+	left: 64px;
+	background-color: #000;
+	padding: 0px 10px;
+	border-radius: 100%;
+	display: none;
+}
+.thumbnail span.plus:hover {
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	transform: scale(1.2);
+}
+.thumbnail span.plus:before {
+	content: '+';
+	color: #fff;
+	font-size: 26px;
+}
+.thumbnail:hover span.plus,
+.thumbnail.has-contextmenu span.plus {
+	display: inline-block;
+}
+/* end of plus-action for albums */
