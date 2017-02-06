@@ -46,6 +46,14 @@ this.manifest = {
         {
             "tab": "Sidebar Menu",
             "group": "Items",
+            "name": "sidebar_chk_feeds",
+            "type": "checkbox",
+            "label": "Feeds",
+			"domId": "notifications"
+        },
+        {
+            "tab": "Sidebar Menu",
+            "group": "Items",
             "name": "sidebar_chk_apps",
             "type": "checkbox",
             "label": "Apps",

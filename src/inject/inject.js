@@ -386,7 +386,7 @@
 					return;
 
 				for(var i = 0; i < response.length; i++)
-					document.querySelector("ul a[data-type="+response[i]+"]").parentElement.remove();
+					document.querySelector("ul li *[data-type="+response[i]+"]").parentElement.remove();
 			});
 
 			chrome.runtime.sendMessage({type: "getPageByUrl", url: window.location.href}, function(response) {

@@ -1,6 +1,6 @@
 {
   "name": "Deezer Enhancements",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "manifest_version": 2,
   "description": "This extension helps to improve user experience of Deezer web app",
   "homepage_url": "https://deezer.com",
@@ -25,24 +25,14 @@
     "contentSettings",
     "notifications",
 	"history",
-    "storage"
+    "storage",
+    "activeTab"
   ],
   "content_scripts": [
     {
-      "matches": [
-        "*://*.deezer.com/*"
-      ],
-      "css": [
-        "src/inject/inject.css"
-      ]
-    },
-    {
-      "matches": [
-        "https://www.deezer.com/*"
-      ],
-      "js": [
-        "src/inject/inject.js"
-      ]
+      "matches": ["*://*.deezer.com/*"],
+      "css": ["src/inject/inject.css"],
+      "js": ["src/inject/inject.js"]
     }
   ]
 }
