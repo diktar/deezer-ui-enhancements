@@ -3,7 +3,6 @@
   "version": "1.1.2",
   "manifest_version": 2,
   "description": "This extension helps to improve user experience of Deezer web app",
-  "homepage_url": "https://deezer.com",
   "icons": {
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
