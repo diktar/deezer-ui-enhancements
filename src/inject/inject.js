@@ -265,7 +265,7 @@
 		// default deezer's popup dimensiona are approx 250pxx300px
 		// plus-button dimentions are 35x34
 		that._playlistsPopup.style.left = that.targetPosition.left - 250 + "px";
-		that._playlistsPopup.style.top = that.targetPosition.top - 150 + 17 + "px";
+		that._playlistsPopup.style.top = document.body.scrollTop + that.targetPosition.top - 150 + 17 + "px";
 
 		if(element.parentElement.className.indexOf('has-contextmenu') == -1)
 			element.parentElement.className += " has-contextmenu"; // this item remains with 'hovered' styles
@@ -301,7 +301,9 @@
 		that.targetPosition = e.target.getBoundingClientRect(); // TODO: consider moving into other place
 
 		var albumRegexp = /album\/(\d+)$/;
-		var albumId = albumRegexp.exec(e.target.parentElement.parentElement.querySelector(".thumbnail-caption > .heading-4 a").href);
+		var albumId = albumRegexp.exec(e.currentTarget
+            .parentElement.parentElement.parentElement
+            .querySelector(".thumbnail-caption > .heading-4 a").href);
 		var userId = /\/(\d+)$/.exec(document.querySelector("ul a[data-type=profile]").getAttribute('href'))[1];
 		var body = JSON.stringify([{
 			"method": "deezer.pageProfile",
@@ -329,16 +331,34 @@
 	var addPlusButtonToAlbums = function(){
 		"use strict";
 
-		var albumThumbnails = document.querySelectorAll('.thumbnail-grid .thumbnail');
+		// debugger;
+
+		let albumThumbnails = document.querySelectorAll('.thumbnail-grid .thumbnail');
 
 		if(albumThumbnails){
-			for (var i = 0; i < albumThumbnails.length; i++){
-				var addEl = document.createElement("span");
+			for (let i = 0; i < albumThumbnails.length; i++) {
+                let thumbnail = albumThumbnails[i];
 
-				addEl.className = 'plus';
-				addEl.onclick = onPlusClick;
+                if(thumbnail.querySelectorAll(".plus").length)
+                    continue; // mutation event might call this code more than once
 
-				albumThumbnails[i].insertBefore(addEl, albumThumbnails[i].lastChild);
+                if(thumbnail.classList.contains("thumbnail-rounded"))
+                    continue; // there aren't albums
+
+				let addElLiContainer = document.createElement("li");
+				let addElButton = document.createElement("button");
+				let addElSpan = document.createElement("span");
+
+				addElSpan.className = 'icon plus';
+
+                addElButton.className = "action-item-btn";
+                addElButton.appendChild(addElSpan);
+
+                addElLiContainer.className = "action-item plus-container";
+                addElLiContainer.onclick = onPlusClick;
+                addElLiContainer.appendChild(addElButton);
+
+				thumbnail.querySelectorAll("ul.action")[0].append(addElLiContainer);
 			}
 		}
 	};
@@ -355,13 +375,15 @@
 		// create an observer instance
 		observer = new MutationObserver(function (mutations) {
 			mutations.forEach(function (mutation) {
-				if (mutation.target.tagName.toLowerCase() == 'div'
-						&& (mutation.target.className.toLowerCase() == "catalog-content" // tab has changed
-						|| mutation.target.id == 'naboo_content')) { // page has changed
+				if (mutation.target.tagName.toLowerCase() == 'main'
+						&& (mutation.target.className.toLowerCase() == "page-main")) { // page has changed
 					//console.log(mutation);
 					addPlusButtonToAlbums();
-				} else if(mutation.target.tagName.toLowerCase() == 'ul'
-					&& mutation.target.className.toLowerCase() == "thumbnail-grid") { // lazy loading of albums
+				} else if(mutation.target.tagName.toLowerCase() == 'div'
+					&& mutation.target.className.toLowerCase() == "catalog-content") { // tab has changed
+					addPlusButtonToAlbums();
+				}else if(mutation.target.tagName.toLowerCase() == 'ul'
+					&& mutation.target.className.toLowerCase() == "thumbnail-grid thumbnail-grid-responsive") { // lazy loading of albums
 					addPlusButtonToAlbums();
 				}
 			});
