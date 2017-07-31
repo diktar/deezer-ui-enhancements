@@ -1,7 +1,7 @@
 var getMatchesForUrl = function (url) {
 	"use strict";
 
-	var regexp = new RegExp('.deezer.com/([a-z]+)/\\d', 'g');
+	var regexp = new RegExp('.deezer.com/[a-z]+/([a-z]+)/\\d', 'g');
 
 	return regexp.exec(url);
 };
