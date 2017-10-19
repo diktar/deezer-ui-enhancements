@@ -265,7 +265,7 @@
 		// default deezer's popup dimensiona are approx 250pxx300px
 		// plus-button dimentions are 35x34
 		that._playlistsPopup.style.left = that.targetPosition.left - 250 + "px";
-		that._playlistsPopup.style.top = document.body.scrollTop + that.targetPosition.top - 150 + 17 + "px";
+		that._playlistsPopup.style.top = document.querySelector('html').scrollTop + that.targetPosition.top - 150 + 17 + "px";
 
 		if(element.parentElement.className.indexOf('has-contextmenu') == -1)
 			element.parentElement.className += " has-contextmenu"; // this item remains with 'hovered' styles
