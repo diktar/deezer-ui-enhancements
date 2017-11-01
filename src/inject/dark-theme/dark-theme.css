@@ -1,0 +1,138 @@
+html.deezer-enhancement.dark-theme body.naboo,
+html.deezer-enhancement.dark-theme body.naboo .page-main {
+    background-color: #343442;
+}
+
+html.deezer-enhancement.dark-theme #dzr-app .btn-default,
+html.deezer-enhancement.dark-theme #dzr-app .btn-default:hover,
+html.deezer-enhancement.dark-theme #dzr-app .btn-block,
+html.deezer-enhancement.dark-theme #dzr-app .btn-block:hover {
+    background-color: transparent;
+    color: #92929d;
+    box-shadow: none;
+}
+
+html.deezer-enhancement.dark-theme #dzr-app .heading-1,
+html.deezer-enhancement.dark-theme #dzr-app .heading-2,
+html.deezer-enhancement.dark-theme #dzr-app .heading-3,
+html.deezer-enhancement.dark-theme #dzr-app .heading-4,
+html.deezer-enhancement.dark-theme #dzr-app .heading-5,
+html.deezer-enhancement.dark-theme #dzr-app .heading-1 *,
+html.deezer-enhancement.dark-theme #dzr-app .heading-2 *,
+html.deezer-enhancement.dark-theme #dzr-app .heading-3 *,
+html.deezer-enhancement.dark-theme #dzr-app .heading-4 *,
+html.deezer-enhancement.dark-theme #dzr-app .heading-5 * {
+    color: #92929d;
+}
+
+html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content,
+html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content:nth-child(2n) {
+    background-color: #343442;
+}
+
+/* left panels */
+
+html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper {
+    background-color: #343442;
+}
+    html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper .panel-header {
+        background-color: inherit;
+    }
+    html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper .panel-body {
+        background-color: inherit;
+    }
+        html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper .panel-body .nano-card-item {
+            background-color: inherit;
+        }
+            html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper .panel-body .nano-card-item .nano-card-picture {
+                border-right: none;
+            }
+            html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper .panel-body .nano-card-item a {
+                color: #92929d;
+            }
+
+/* left panels end */
+
+/* playlist page */
+
+html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content .catalog-header .header-info .heading-link {
+    color: #92929d;
+}
+
+html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content .datagrid-toolbar .toolbar-search input {
+    border-color: #444;
+    background-color: #92929d;
+    color: #444;
+}
+
+html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content .datagrid-toolbar .toolbar-search input::placeholder {
+    color: #fff;
+}
+
+html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content .datagrid {
+    background-color: #343442;
+}
+    html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content .datagrid .datagrid-row:hover {
+        background-color: #23232C;
+    }
+
+        html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content .datagrid .datagrid-row .datagrid-action.is-active,
+        html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content .datagrid .datagrid-row .datagrid-action:hover {
+            background-color: transparent;
+        }
+
+        html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content .datagrid .datagrid-row.song .datagrid-label {
+            color: #92929d;
+        }
+
+        html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content .datagrid .datagrid-row.song.active .datagrid-label {
+            color: #5899d0;
+        }
+
+html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content .catalog-tab-comment .catalog-tab-box {
+    background-color: transparent;
+}
+    html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content .catalog-tab-comment .catalog-tab-box textarea {
+        border-color: #444;
+        background-color: #92929d;
+        color: #444;
+    }
+
+/* playlist page end */
+
+/* artist page etc */
+
+html.deezer-enhancement.dark-theme #dzr-app .page-main .banner-header,
+html.deezer-enhancement.dark-theme #dzr-app .page-main .navbar {
+    background-color: inherit;
+}
+    html.deezer-enhancement.dark-theme #dzr-app .page-main .navbar .navbar-nav > li > a:hover,
+    html.deezer-enhancement.dark-theme #dzr-app .page-main .navbar .navbar-nav > li.active > a,
+    html.deezer-enhancement.dark-theme #dzr-app .page-main .navbar .navbar-nav > li > button:hover {
+        color: #bebebe;
+    }
+    html.deezer-enhancement.dark-theme #dzr-app .page-main .banner-header .icon:before {
+        color: #92929d;
+    }
+
+html.deezer-enhancement.dark-theme #dzr-app .page-main .catalog-content .container .content-left,
+html.deezer-enhancement.dark-theme #dzr-app .page-main .catalog-content .has-white-bg {
+    background-color: inherit;
+}
+    html.deezer-enhancement.dark-theme #dzr-app .page-main .catalog-content .container .content-left .catalog-tab-box {
+        background-color: inherit;
+    }
+
+/* artist page etc end */
+
+/* hear this page */
+
+html.deezer-enhancement.dark-theme #dzr-app .page-main #page_feed .card,
+html.deezer-enhancement.dark-theme #dzr-app .page-main #page_feed .card .footer {
+    background-color: inherit;
+}
+    html.deezer-enhancement.dark-theme #dzr-app .page-main #page_feed .card .visual {
+        border: none;
+    }
+
+/* hear this page */

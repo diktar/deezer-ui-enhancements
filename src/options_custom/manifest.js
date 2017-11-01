@@ -70,5 +70,15 @@ this.manifest = {
 		    "text": "There is an action added to albums that allows you to add songs to the playlist without opening the album. Currently it can't be turned off."
 	    },
 	    // Actions end
+
+        // Appearance
+	    {
+		    "tab": "Appearance",
+		    "group": "Theme",
+		    "name": "appearance_theme_dark",
+            "type": "checkbox",
+		    "label": "Apply dark theme"
+	    },
+	    // Appearance end
     ]
 };

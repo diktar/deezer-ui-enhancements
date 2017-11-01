@@ -1,8 +1,8 @@
 {
   "name": "Deezer Enhancements",
-  "version": "1.1.5",
+  "version": "1.2.1",
   "manifest_version": 2,
-  "description": "This extension helps to improve user experience of Deezer web app",
+  "description": "This extension helps to improve user experience while using Deezer",
   "icons": {
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
@@ -29,8 +29,15 @@
   "content_scripts": [
     {
       "matches": ["*://*.deezer.com/*"],
-      "css": ["src/inject/inject.css"],
-      "js": ["src/inject/inject.js"]
+      "css": [
+        "src/inject/plus-button/plus-button.css",
+        "src/inject/dark-theme/dark-theme.css"
+      ],
+      "js": [
+        "src/inject/dark-theme/dark-theme.js",
+        "src/inject/menu-content/menu-content.js",
+        "src/inject/plus-button/plus-button.js"
+      ]
     }
   ]
 }

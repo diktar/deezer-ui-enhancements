@@ -9,33 +9,43 @@ var getMatchesForUrl = function (url) {
 chrome.runtime.onInstalled.addListener(function(details) {
 	"use strict";
 
-	var settings = new Store("settings");
-	settings.toObject(function(items){
-		"use strict";
+    var settings = new Store("settings");
 
-		if(!Object.keys(items).length){
-			settings.set("sidebar_chk_home", true);
-			settings.set("sidebar_chk_hearThis", true);
-			settings.set("sidebar_chk_favouriteTracks", true);
-			settings.set("sidebar_chk_playlists", true);
-		}
-	});
+	if(details.reason == 'install') {
+        settings.toObject(function (items) {
+            "use strict";
+
+            if (!Object.keys(items).length) {
+                settings.set("sidebar_chk_home", true);
+                settings.set("sidebar_chk_hearThis", true);
+                settings.set("sidebar_chk_favouriteTracks", true);
+                settings.set("sidebar_chk_playlists", true);
+
+                settings.set("appearance_theme_dark", true);
+            }
+        });
+    } else if(details.reason == 'update'){
+        settings.toObject(function (items) {
+            "use strict";
+
+            settings.set("appearance_theme_dark", true);
+        });
+    }
 });
 
-//example of using a message handler from the inject scripts
 chrome.runtime.onMessage.addListener(
 	function(request, sender, sendResponse) {
 		"use strict";
 
-		var responsePromise = null;
+		var responsePromise = null,
+            storedSettings = new Store("settings");
 
 		if(!request || !request.type)
 		return;
 
 		switch (request.type){
 			case "getSidebarItemsToRemove":
-				var storedSettings = new Store("settings"),
-				  	items = [],
+				var items = [],
 					settings = {};
 
 				responsePromise = new Promise(function (resolve, reject){
@@ -77,6 +87,20 @@ chrome.runtime.onMessage.addListener(
 						resolve({ page: matches[1] });
 					else
 						resolve();
+				});
+
+				break;
+
+			case "getTheme":
+				responsePromise = new Promise(function (resolve, reject){
+                    storedSettings.get("appearance_theme_dark", function(items){
+                        var val = items["appearance_theme_dark"];
+
+                        if(val)
+                            resolve(items["appearance_theme_dark"]);
+                        else
+                            reject();
+                    })
 				});
 
 				break;
