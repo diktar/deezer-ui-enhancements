@@ -21,14 +21,15 @@ chrome.runtime.onInstalled.addListener(function(details) {
                 settings.set("sidebar_chk_favouriteTracks", true);
                 settings.set("sidebar_chk_playlists", true);
 
-                settings.set("appearance_theme_dark", true);
+                settings.set("appearance_theme_dark", false);
             }
         });
     } else if(details.reason == 'update'){
         settings.toObject(function (items) {
             "use strict";
 
-            settings.set("appearance_theme_dark", true);
+            if(Object.keys(items).indexOf("appearance_theme_dark") === -1)
+                settings.set("appearance_theme_dark", false);
         });
     }
 });

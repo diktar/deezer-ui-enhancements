@@ -1,8 +1,8 @@
 {
-  "name": "Deezer Enhancements",
-  "version": "1.2.1",
+  "name": "Deezerify",
+  "version": "1.2.3",
   "manifest_version": 2,
-  "description": "This extension helps to improve user experience while using Deezer",
+  "description": "This extension improves look and feel of Deezer",
   "icons": {
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
