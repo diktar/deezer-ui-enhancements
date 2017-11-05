@@ -27,9 +27,6 @@ chrome.runtime.onInstalled.addListener(function(details) {
     } else if(details.reason == 'update'){
         settings.toObject(function (items) {
             "use strict";
-
-            if(Object.keys(items).indexOf("appearance_theme_dark") === -1)
-                settings.set("appearance_theme_dark", false);
         });
     }
 });
