@@ -200,7 +200,7 @@
 			var innerPlaylistsContainer = document.createElement("div");
 			var playlistsUl = document.createElement("ul");
 
-			outerPopupContainer.className = "page-contextmenu opened";
+			outerPopupContainer.className = "page-contextmenu is-opened deezerify";
 			innerPopupContainer.className = "popover popover-left";
 			innerPopupHeader.className = "popover-header";
 			innerPopupHeader.innerHTML =
@@ -399,7 +399,7 @@
 		observer.observe(target, config);
 	};
 
-	document.onreadystatechange = () => {
+    window.addStartupTask(() => {
 		if (document.readyState === 'complete') {
 			chrome.runtime.sendMessage({type: "getPageByUrl", url: window.location.href}, function(response) {
 				if(!response)
@@ -412,7 +412,7 @@
 				}
 			});
 		}
-	};
+	});
 
 	// this only works on navigation
 	chrome.runtime.connect().onMessage.addListener(function(msg) {

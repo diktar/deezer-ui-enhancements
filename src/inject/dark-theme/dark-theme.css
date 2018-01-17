@@ -51,6 +51,10 @@ html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel
                 color: #92929d;
             }
 
+    html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper .panel-lyrics {
+        background-color: inherit;
+    }
+
 /* left panels end */
 
 /* playlist page */
@@ -75,6 +79,9 @@ html.deezer-enhancement.dark-theme #dzr-app .page-main .datagrid {
     html.deezer-enhancement.dark-theme #dzr-app .page-main .datagrid .datagrid-row:hover {
         background-color: #23232C;
     }
+        html.deezer-enhancement.dark-theme #dzr-app .page-main .datagrid .datagrid-row.has-contextmenu {
+            background-color: inherit;
+        }
 
         html.deezer-enhancement.dark-theme #dzr-app .page-main .datagrid .datagrid-row .datagrid-action.is-active,
         html.deezer-enhancement.dark-theme #dzr-app .page-main .datagrid .datagrid-row .datagrid-action:hover {
