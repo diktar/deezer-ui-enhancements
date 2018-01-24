@@ -167,3 +167,11 @@ html.deezer-enhancement.dark-theme #dzr-app .page-main .page-naboo-search .datag
         }
 
 /* search page end */
+
+/* my music page */
+
+html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog {
+    background-color: inherit;
+}
+
+/* my music page end */
