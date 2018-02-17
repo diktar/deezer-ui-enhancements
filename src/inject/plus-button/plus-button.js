@@ -19,8 +19,22 @@
 			.then(function(stream) {
 				return stream.json();
 			}).then(function(data) {
-				if(data[0].error.length)
-					alert("Something's gone wrong. Try to refresh the page.");
+				if(Object.keys(data[0].error).length) {
+					if (data[0].error.VALID_TOKEN_REQUIRED) {
+						window.checkForm.value = "";
+
+						return ajax(JSON.stringify([{
+							method: "deezer.getUserData"
+						}]))
+						.then(function(data) {
+							window.checkForm.value = data[0].result.checkForm;
+
+							return ajax(body);
+						});
+					}
+					else
+						alert("Something's gone wrong. Try refreshing the page.");
+				}
 				else
 					return data[0].results;
 			});
@@ -373,7 +387,7 @@
 		// create an observer instance
 		observer = new MutationObserver(function (mutations) {
 			mutations.forEach(function (mutation) {
-				if (mutation.target.tagName.toLowerCase() == 'main'
+				if (mutation.target.tagName.toLowerCase() == 'div'
 						&& (mutation.target.className.toLowerCase() == "page-main")) { // page has changed
 					//console.log(mutation);
 					addPlusButtonToAlbums();
@@ -400,18 +414,16 @@
 	};
 
     window.addStartupTask(() => {
-		if (document.readyState === 'complete') {
-			chrome.runtime.sendMessage({type: "getPageByUrl", url: window.location.href}, function(response) {
-				if(!response)
-					return;
+		chrome.runtime.sendMessage({type: "getPageByUrl", url: window.location.href}, function(response) {
+			if(!response)
+				return;
 
-				if(response.page == 'artist') {
-					addPlusButtonToAlbums();
+			if(response.page == 'artist') {
+				addPlusButtonToAlbums();
 
-					observeDomChanges();
-				}
-			});
-		}
+				observeDomChanges();
+			}
+		});
 	});
 
 	// this only works on navigation
