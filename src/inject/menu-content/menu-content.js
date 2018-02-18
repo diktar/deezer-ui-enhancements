@@ -11,12 +11,22 @@
 					"deezerify/js/deezerify-filter-menu.js": function(e, t, n) {
 						"use strict";
 
-						var events = n("./js/_modules/Events.js").a;
+						let removeItems = () => {
+							for (let i = 0; i < itemsToHide.length; i++) {
+								let el = document.querySelector("ul li *[data-type=" + itemsToHide[i] + "]");
+
+								if(el)
+									el.parentElement.remove();
+							}
+						}
+						let events = n("./js/_modules/Events.js").a;
 
 						events.subscribeOnce(events.player.playerLoaded, function(e){
-							for (var i = 0; i < itemsToHide.length; i++)
-								document.querySelector("ul li *[data-type=" + itemsToHide[i] + "]").parentElement.remove();
+							removeItems();
 						});
+
+						// in case when it's already late enough to skip subscription
+						removeItems();
 					},
 				}, ["deezerify/js/deezerify-filter-menu.js"]);
 			}, response);
