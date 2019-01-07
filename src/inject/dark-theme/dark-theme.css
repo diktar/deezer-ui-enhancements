@@ -1,6 +1,8 @@
 html.deezer-enhancement.dark-theme body.naboo,
+html.deezer-enhancement.dark-theme body.naboo .page-topbar,
 html.deezer-enhancement.dark-theme body.naboo .page-main {
     background-color: #343442;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 10px 12px 0px;
 }
 
 html.deezer-enhancement.dark-theme #dzr-app .btn-default,
@@ -30,34 +32,48 @@ html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-c
     background-color: #343442;
 }
 
-/* left panels */
+/* page player */
 
-html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper {
+html.deezer-enhancement.dark-theme body.naboo .page-player .player-bottom {
     background-color: #343442;
+    color: #92929d;
+    box-shadow: 0 -3px 12px 0 rgba(0, 0, 0, 0.12);
 }
-    html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper .panel-header {
-        background-color: inherit;
-    }
-    html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper .panel-body {
-        background-color: inherit;
-    }
-        html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper .panel-body .nano-card-item {
-            background-color: inherit;
-        }
-            html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper .panel-body .nano-card-item .nano-card-picture {
-                border-right: none;
-            }
-            html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper .panel-body .nano-card-item a {
-                color: #92929d;
-            }
-
-    html.deezer-enhancement.dark-theme #dzr-app .page-panels .panel-container .panel-wrapper .panel-lyrics {
-        background-color: inherit;
+    html.deezer-enhancement.dark-theme body.naboo .page-player .player-bottom .svg-icon-group-btn {
+        color: inherit;
     }
 
-/* left panels end */
+    html.deezer-enhancement.dark-theme body.naboo .page-player .player-bottom .player-track .track-heading {
+        color: inherit;
+    }
 
-/* playlist page */
+    html.deezer-enhancement.dark-theme body.naboo .page-player .player-bottom .player-track .track-seekbar .slider-track-active {
+        background-color: #23232c;
+    }
+
+    html.deezer-enhancement.dark-theme body.naboo .page-player .player-bottom .marquee-gradient {
+        background-image: none;
+    }
+
+html.deezer-enhancement.dark-theme body.naboo .page-player .player-full {
+    background-color: #343442;
+    color: #92929d;
+}
+    html.deezer-enhancement.dark-theme body.naboo .page-player .player-full .lyrics-line {
+        color: inherit;
+    }
+
+    html.deezer-enhancement.dark-theme body.naboo .page-player .player-full .lyrics-spinner {
+        color: inherit;
+    }
+
+    html.deezer-enhancement.dark-theme body.naboo .page-player .player-full .lyrics-gradient {
+        background-image: none;
+    }
+
+/* page player end */
+
+/* playlist page and queue grid */
 
 html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-content .catalog-header .header-info .heading-link {
     color: #92929d;
@@ -73,26 +89,30 @@ html.deezer-enhancement.dark-theme #dzr-app .page-main .naboo-catalog .catalog-c
     color: #fff;
 }
 
-html.deezer-enhancement.dark-theme #dzr-app .page-main .datagrid {
+html.deezer-enhancement.dark-theme #dzr-app .datagrid {
     background-color: #343442;
 }
-    html.deezer-enhancement.dark-theme #dzr-app .page-main .datagrid .datagrid-row:hover {
+    html.deezer-enhancement.dark-theme #dzr-app .datagrid .datagrid-header .datagrid-row {
+        background-color: inherit;
+    }
+
+    html.deezer-enhancement.dark-theme #dzr-app .datagrid .datagrid-row:hover {
         background-color: #23232C;
     }
-        html.deezer-enhancement.dark-theme #dzr-app .page-main .datagrid .datagrid-row.has-contextmenu {
+        html.deezer-enhancement.dark-theme #dzr-app .datagrid .datagrid-row.has-contextmenu {
             background-color: inherit;
         }
 
-        html.deezer-enhancement.dark-theme #dzr-app .page-main .datagrid .datagrid-row .datagrid-action.is-active,
-        html.deezer-enhancement.dark-theme #dzr-app .page-main .datagrid .datagrid-row .datagrid-action:hover {
+        html.deezer-enhancement.dark-theme #dzr-app .datagrid .datagrid-row .datagrid-action.is-active,
+        html.deezer-enhancement.dark-theme #dzr-app .datagrid .datagrid-row .datagrid-action:hover {
             background-color: transparent;
         }
 
-        html.deezer-enhancement.dark-theme #dzr-app .page-main .datagrid .datagrid-row.song .datagrid-label {
+        html.deezer-enhancement.dark-theme #dzr-app .datagrid .datagrid-row.song .datagrid-label {
             color: #92929d;
         }
 
-        html.deezer-enhancement.dark-theme #dzr-app .page-main .datagrid .datagrid-row.song.active .datagrid-label {
+        html.deezer-enhancement.dark-theme #dzr-app .datagrid .datagrid-row.song.active .datagrid-label {
             color: #5899d0;
         }
 
